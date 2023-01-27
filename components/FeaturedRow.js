@@ -47,7 +47,7 @@ const FeaturedRow = ({ id, title, description }) => {
 					title="Yo sushi"
 					rating={4.5}
 					genre="Japanese"
-					address="123 Main St"
+					address="145 Main St"
 					short_description="This is a test description"
 					dishes={[]}
 					long={20}
