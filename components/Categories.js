@@ -15,27 +15,27 @@ const Categories = () => {
 			{/* Categories Card*/}
 			<CategoryCard
 				imgUrl="https://links.papareact.com/wru"
-				title="testing"
+				title="testing 01"
 			/>
 			<CategoryCard
 				imgUrl="https://links.papareact.com/wru"
-				title="testing"
+				title="testing 02"
 			/>
 			<CategoryCard
 				imgUrl="https://links.papareact.com/wru"
-				title="testing"
+				title="testing 03"
 			/>
       			<CategoryCard
 				imgUrl="https://links.papareact.com/wru"
-				title="testing"
+				title="testing 04"
 			/>
 			<CategoryCard
 				imgUrl="https://links.papareact.com/wru"
-				title="testing"
+				title="testing 05"
 			/>
 			<CategoryCard
 				imgUrl="https://links.papareact.com/wru"
-				title="testing"
+				title="testing 07"
 			/>
 		</ScrollView>
 	);
