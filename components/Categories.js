@@ -1,4 +1,4 @@
-import { View, Text, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 import React from "react";
 import CategoryCard from "./CategoryCard";
 
@@ -25,7 +25,7 @@ const Categories = () => {
 				imgUrl="https://links.papareact.com/wru"
 				title="testing-03"
 			/>
-      			<CategoryCard
+			<CategoryCard
 				imgUrl="https://links.papareact.com/wru"
 				title="testing-04"
 			/>
