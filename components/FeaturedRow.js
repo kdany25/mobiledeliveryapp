@@ -32,11 +32,11 @@ const FeaturedRow = ({ id, title, description }) => {
 				<RestaurantCard
 					id={123}
 					imgUrl="https://links.papareact.com/wru"
-					title="Yo sushi"
+					title="Pizza"
 					rating={4.5}
-					genre="Japanese"
+					genre="Italy"
 					address="156 Main St"
-					short_description="This is a test description"
+					short_description="Italian pizza here"
 					dishes={[]}
 					long={20}
 					lat={0}
@@ -44,11 +44,11 @@ const FeaturedRow = ({ id, title, description }) => {
 				<RestaurantCard
 					id={123}
 					imgUrl="https://links.papareact.com/wru"
-					title="Yo sushi"
+					title="Humburger"
 					rating={4.5}
-					genre="Japanese"
-					address="145 Main St"
-					short_description="This is a test description"
+					genre="Amercan"
+					address="190 Main St"
+					short_description="This is best humburger in town"
 					dishes={[]}
 					long={20}
 					lat={0}
