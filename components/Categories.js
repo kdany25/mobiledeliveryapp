@@ -31,6 +31,7 @@ const Categories = () => {
 			{/* Categories Card*/}
 			{categories.map((category) => (
 				<CategoryCard
+					key={category._id}
 					imgUrl={urlfor(category.image).width(200).url()}
 					title={category.name}
 				/>
