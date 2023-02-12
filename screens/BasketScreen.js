@@ -4,14 +4,16 @@ import {
 	SafeAreaView,
 	TouchableOpacity,
 	Image,
-  ScrollView,
+	ScrollView,
 } from "react-native";
 import React, { useEffect, useMemo, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { selectRestaurant } from "../slices/restauranSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBasketItems } from "../slices/basketSlice";
+import { removeToBasket, selectBasketItems } from "../slices/basketSlice";
 import { XCircleIcon } from "react-native-heroicons/solid";
+import { urlfor } from "../sanity";
+import Currency from "react-currency-formatter";
 
 const BasketScreen = () => {
 	const navigation = useNavigation();
@@ -28,9 +30,9 @@ const BasketScreen = () => {
 		setGroupedItemsInBasket(groupedItems);
 	}, [items]);
 	return (
-		<SafeAreaView>
-			<View>
-				<View>
+		<SafeAreaView className="flex-1 bg-white">
+			<View className="flex-1 bg-gray-100">
+				<View className="p-5 border-b border-[#00CCBB] bg-white shadow-xs">
 					<View>
 						<Text className="text-lg font-bold text-center">
 							Basket
@@ -46,6 +48,8 @@ const BasketScreen = () => {
 						<XCircleIcon color={"#00CCBB"} height={50} width={50} />
 					</TouchableOpacity>
 				</View>
+
+
 				<View className="flex-row items-center space-x-4 px-4 py-3 bg-white my-5">
 					<Image
 						source={{ uri: "https://links.papareacr.com/wru" }}
@@ -56,9 +60,38 @@ const BasketScreen = () => {
 						<Text className="text-[#00CCBB]">Change</Text>
 					</TouchableOpacity>
 				</View>
-        <ScrollView>
-
-        </ScrollView>
+				
+				<ScrollView>
+					{Object.entries(groupItemInBasket).map(([key, items]) => {
+						<View
+							key={key}
+							className="flex-row items-center space-x-3 bg-white py-2 px-5"
+						>
+							<Text>{items.length} x</Text>
+							<Image
+								source={{ uri: urlfor(items[0]?.image).url() }}
+								className="h-12 w-12 rounded-full"
+							/>
+							<Text className="flex-1">{items[0]?.name}</Text>
+							<Text className="text-gray-600">
+								<Currency
+									quantity={items[0]?.price}
+									currency="GBP"
+								/>
+							</Text>
+							<TouchableOpacity>
+								<Text
+									className="text-[#00CCBB] text-xs"
+									onPress={() =>
+										dispatch(removeToBasket({ id: key }))
+									}
+								>
+									Remove
+								</Text>
+							</TouchableOpacity>
+						</View>;
+					})}
+				</ScrollView>
 			</View>
 		</SafeAreaView>
 	);
